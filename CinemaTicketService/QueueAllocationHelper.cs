@@ -15,12 +15,11 @@ namespace CinemaTicketService
             foreach (string row in rows)
                 for (int i = 1; i <= seatsInRow; i++) 
                     availiableSeats.Enqueue($"{row}{i}");
-
         }
 
         public string[] GetTicketsFor(int numberOfSeats) 
         {
-            if (numberOfSeats == 0 && numberOfSeats > availiableSeats.Count)
+            if (numberOfSeats == 0 || numberOfSeats > availiableSeats.Count)
                 return System.Array.Empty<string>();
 
             string[] tickets = new string[numberOfSeats];
@@ -30,5 +29,7 @@ namespace CinemaTicketService
 
             return tickets;
         }
+
+        public int GetAvailiableSeatsCount() => (availiableSeats != null) ? availiableSeats.Count : 0;
     }
 }
