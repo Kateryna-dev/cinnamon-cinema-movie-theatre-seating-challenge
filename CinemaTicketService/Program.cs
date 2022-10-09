@@ -2,11 +2,11 @@
 
 namespace CinemaTicketService
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to the Cinnamon Cinema Ticket Service!");
         }
     }
 }
